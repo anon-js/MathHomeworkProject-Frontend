@@ -4,22 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수학 프로젝트</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>수학 문제제작 서비스</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <div class="container-fluid mt-5">
-        <select class="form-select mt-3 mb-3" aria-label="Default select" style="width: 200px;">
-            <option selected>문제 변경</option>
-            <option value="problem1">문제 1</option>
-            <option value="problem2">문제 2</option>
-            <option value="problem3">문제 3</option>
-        </select>
+        <h1 class="text-center">고선생 수학 오답노트 생성기</h1>
+        <p class="text-center fs-5 mt-3 mb-0 d-flex align-items-center justify-content-center">
+            <a href="https://open.kakao.com/o/gbFwOPfg" class="link-underline link-underline-opacity-0">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
+                    <path fill="#263238"
+                        d="M24,4C12.402,4,3,11.611,3,21c0,5.99,3.836,11.245,9.618,14.273l-2.219,7.397	c-0.135,0.449,0.366,0.82,0.756,0.56l8.422-5.615C21.004,37.863,22.482,38,24,38c11.598,0,21-7.611,21-17S35.598,4,24,4z">
+                    </path>
+                    <path fill="#ffca28"
+                        d="M15,18H9c-0.552,0-1-0.448-1-1v0c0-0.552,0.448-1,1-1h6c0.552,0,1,0.448,1,1v0	C16,17.552,15.552,18,15,18z">
+                    </path>
+                    <path fill="#ffca28"
+                        d="M25,26v-9c0-0.552,0.448-1,1-1h0c0.552,0,1,0.448,1,1v9c0,0.552-0.448,1-1,1h0	C25.448,27,25,26.552,25,26z">
+                    </path>
+                    <path fill="#ffca28"
+                        d="M32,26v-9c0-0.552,0.448-1,1-1l0,0c0.552,0,1,0.448,1,1v9c0,0.552-0.448,1-1,1l0,0	C32.448,27,32,26.552,32,26z">
+                    </path>
+                    <path fill="#ffca28"
+                        d="M32.621,21.207l4.914-4.914c0.391-0.391,1.024-0.391,1.414,0v0c0.391,0.391,0.391,1.024,0,1.414	l-4.914,4.914c-0.391,0.391-1.024,0.391-1.414,0l0,0C32.231,22.231,32.231,21.598,32.621,21.207z">
+                    </path>
+                    <path fill="#ffca28"
+                        d="M36.078,20.665l3.708,4.717c0.341,0.434,0.266,1.063-0.168,1.404l0,0	c-0.434,0.341-1.063,0.266-1.404-0.168l-3.708-4.717c-0.341-0.434-0.266-1.063,0.168-1.404v0	C35.108,20.156,35.737,20.231,36.078,20.665z">
+                    </path>
+                    <path fill="#ffca28"
+                        d="M30,27h-4c-0.552,0-1-0.448-1-1v0c0-0.552,0.448-1,1-1h4c0.552,0,1,0.448,1,1v0	C31,26.552,30.552,27,30,27z">
+                    </path>
+                    <path fill="#ffca28"
+                        d="M23.933,25.642l-3.221-9c-0.145-0.379-0.497-0.611-0.878-0.629c-0.111-0.005-0.54-0.003-0.641-0.001	c-0.392,0.007-0.757,0.241-0.906,0.63l-3.221,9c-0.198,0.516,0.06,1.094,0.576,1.292s1.094-0.06,1.292-0.576L17.42,25h4.16	l0.486,1.358c0.198,0.516,0.776,0.773,1.292,0.576S24.131,26.157,23.933,25.642z M18.136,23l1.364-3.812L20.864,23H18.136z">
+                    </path>
+                    <path fill="#ffca28" d="M13,18h-2v8c0,0.552,0.448,1,1,1h0c0.552,0,1-0.448,1-1V18z"></path>
+                </svg>
+                VIP오픈카톡(구매자전용)
+            </a>
+            &nbsp;- 수학 고민, 공부법 상담, 문제 질문
+        </p>
+        <p class="text-center fs-5 mb-3 d-flex align-items-center justify-content-center">
+            <a href="https://mathgo.notion.site/83c1754c659a4cfcb6fa1ba387930c1e?pvs=4"
+                class="link-underline link-underline-opacity-0">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M11.553,11.099c1.232,1.001,1.694,0.925,4.008,0.77 l21.812-1.31c0.463,0,0.078-0.461-0.076-0.538l-3.622-2.619c-0.694-0.539-1.619-1.156-3.391-1.002l-21.12,1.54 c-0.77,0.076-0.924,0.461-0.617,0.77L11.553,11.099z"
+                        clip-rule="evenodd"></path>
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M12.862,16.182v22.95c0,1.233,0.616,1.695,2.004,1.619 l23.971-1.387c1.388-0.076,1.543-0.925,1.543-1.927V14.641c0-1-0.385-1.54-1.234-1.463l-25.05,1.463 C13.171,14.718,12.862,15.181,12.862,16.182L12.862,16.182z"
+                        clip-rule="evenodd"></path>
+                    <path fill="#424242" fill-rule="evenodd"
+                        d="M11.553,11.099c1.232,1.001,1.694,0.925,4.008,0.77 l21.812-1.31c0.463,0,0.078-0.461-0.076-0.538l-3.622-2.619c-0.694-0.539-1.619-1.156-3.391-1.002l-21.12,1.54 c-0.77,0.076-0.924,0.461-0.617,0.77L11.553,11.099z M12.862,16.182v22.95c0,1.233,0.616,1.695,2.004,1.619l23.971-1.387 c1.388-0.076,1.543-0.925,1.543-1.927V14.641c0-1-0.385-1.54-1.234-1.463l-25.05,1.463C13.171,14.718,12.862,15.181,12.862,16.182 L12.862,16.182z M36.526,17.413c0.154,0.694,0,1.387-0.695,1.465l-1.155,0.23v16.943c-1.003,0.539-1.928,0.847-2.698,0.847 c-1.234,0-1.543-0.385-2.467-1.54l-7.555-11.86v11.475l2.391,0.539c0,0,0,1.386-1.929,1.386l-5.317,0.308 c-0.154-0.308,0-1.078,0.539-1.232l1.388-0.385V20.418l-1.927-0.154c-0.155-0.694,0.23-1.694,1.31-1.772l5.704-0.385l7.862,12.015 V19.493l-2.005-0.23c-0.154-0.848,0.462-1.464,1.233-1.54L36.526,17.413z M7.389,5.862l21.968-1.618 c2.698-0.231,3.392-0.076,5.087,1.155l7.013,4.929C42.614,11.176,43,11.407,43,12.33v27.032c0,1.694-0.617,2.696-2.775,2.849 l-25.512,1.541c-1.62,0.077-2.391-0.154-3.239-1.232l-5.164-6.7C5.385,34.587,5,33.664,5,32.585V8.556 C5,7.171,5.617,6.015,7.389,5.862z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                1등급은 오답노트 이렇게 활용함
+            </a>
+            &nbsp;- 오답노트 생성기 100% 활용법
+        </p>
+
         <div class="d-flex mb-3">
-            <div class="d-flex bg-light w-100 p-5" style="overflow-x: auto;">
+            <div id="pMain" class="d-flex bg-light w-100 p-5" style="overflow-x: auto;">
                 <!--
                     html 태그 구조
 
@@ -38,75 +88,120 @@
                         <div class="vr"></div>
                     </div>
                 -->
-                <div class="w-auto">
-                    <p class="mb-1 text-center fw-bold">Lv.0</p>
-                    <div class="d-flex flex-column align-items-end">
-                        <span>1 <input type="checkbox" name="level"></span>
-                        <span>2 <input type="checkbox" name="level"></span>
-                        <span>3 <input type="checkbox" name="level"></span>
-                        <span>4 <input type="checkbox" name="level"></span>
-                        <span>5 <input type="checkbox" name="level"></span>
-                    </div>
-                </div>
-                <div class="d-flex ms-4 me-4">
-                    <div class="vr"></div>
-                </div>
-                <div class="w-auto">
-                    <p class="mb-1 text-center fw-bold">Lv.1</p>
-                    <div class="d-flex flex-column align-items-end">
-                        <span>1 <input type="checkbox" name="level"></span>
-                        <span>2 <input type="checkbox" name="level"></span>
-                        <span>3 <input type="checkbox" name="level"></span>
-                        <span>4 <input type="checkbox" name="level"></span>
-                    </div>
-                </div>
-                <div class="d-flex ms-4 me-4">
-                    <div class="vr"></div>
-                </div>
-                <div class="w-auto">
-                    <p class="mb-1 text-center fw-bold">Lv.2</p>
-                    <div class="d-flex flex-column align-items-end">
-                        <span>1 <input type="checkbox" name="level"></span>
-                        <span>2 <input type="checkbox" name="level"></span>
-                        <span>3 <input type="checkbox" name="level"></span>
-                    </div>
-                </div>
-                <div class="d-flex ms-4 me-4">
-                    <div class="vr"></div>
-                </div>
-                <div class="w-auto">
-                    <p class="mb-1 text-center fw-bold">Lv.3</p>
-                    <div class="d-flex flex-column align-items-end">
-                        <span>1 <input type="checkbox" name="level"></span>
-                        <span>2 <input type="checkbox" name="level"></span>
-                    </div>
-                </div>
-                <div class="d-flex ms-4 me-4">
-                    <div class="vr"></div>
-                </div>
-                <div class="w-auto">
-                    <p class="mb-1 text-center fw-bold">Lv.4</p>
-                    <div class="d-flex flex-column align-items-end">
-                        <span>1 <input type="checkbox" name="level"></span>
-                    </div>
-                </div>
+
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center ms-3">
-                <a href="문제_다운로드_링크" class="btn btn-primary mb-2" style="width: 100px;">문제 다운</a>
-                <a href="빠른_정답_링크" class="btn btn-primary mb-2" style="width: 100px;">빠른 정답</a>
-                <a href="해설_다운로드_링크" class="btn btn-primary" style="width: 100px;">해설 다운</a>
+                <a href="javascript:download('P')" class="btn btn-success mb-2" style="width: 100px;">문제 다운</a>
+                <a href="javascript:download('SA')" class="btn btn-info mb-2" style="width: 100px;">빠른 정답</a>
+                <a href="javascript:download('S')" class="btn btn-primary" style="width: 100px;">해설 다운</a>
             </div>
         </div>
-        <div class="d-flex justify-content-center m-auto">
-            <button type="button" class="btn btn-primary me-1" onclick="selectAll(true)">전체 선택</button>
-            <button type="button" class="btn btn-primary" onclick="selectAll(false)">전체 해제</button>
+        <div class="d-flex justify-content-between m-auto">
+            <select id="pFolder" class="form-select" aria-label="Default select" style="width: 200px;">
+                <option>문제 변경</option>
+                <option value="66" selected>66문제</option>
+                <!-- <option value="problem2">문제 2</option>
+                <option value="problem3">문제 3</option> -->
+            </select>
+            <div>
+                <button type="button" class="btn btn-dark me-1" onclick="selectAll(true)">전체 선택</button>
+                <button type="button" class="btn btn-secondary" onclick="selectAll(false)">전체 해제</button>
+            </div>
+            <div class="d-flex align-items-center">
+                <a href="https://www.instagram.com/gomath777?igsh=MWdsNGwyaWUzNHVyeQ%3D%3D&utm_source=qr"
+                    class="me-3 text-dark link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                    style="font-size: 20px;">
+                    <i class="bi bi-instagram" style="
+                        background: linear-gradient(to right, #E95950, #8A3AB9);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    "></i>
+                    gomath777
+                </a>
+                <a href="https://youtube.com/@gomath777?si=2SmfND9ZZR47I0m5"
+                    class="text-dark link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                    style="font-size: 20px;">
+                    <i class="bi bi-youtube" style="color: #CD201F;"></i>
+                    고선생수학
+                </a>
+
+            </div>
         </div>
     </div>
     <script>
         function selectAll(btn) {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"][name="level"]');
+            const checkboxes = document.querySelectorAll('input[type="checkbox"][name="pBtn"]');
             checkboxes.forEach(checkbox => checkbox.checked = btn);
         }
+    </script>
+    <script>
+        // API 연동
+
+        // LV 수 불러오기
+        var settings = {
+            "url": "/api/getFileIndex?folder=66",
+            "method": "GET",
+            "timeout": 0,
+        };
+
+        $.ajax(settings).done(async function (response) {
+            console.log(Object.keys(response))
+            for (var i = 0; i < Object.keys(response).length; i++) {
+                var nowLevel = Object.keys(response)[i]
+                var nowProblemLength = response[Object.keys(response)[i]].problem
+
+                var addHtml = ''
+                addHtml += `<div class="w-auto">`
+                addHtml += `<p class="mb-1 text-center fw-bold">Lv.${nowLevel}</p>`
+                addHtml += `<div class="d-flex flex-column align-items-end">`
+                for (var j = 0; j < nowProblemLength; j++) {
+                    addHtml += `<span>${j + 1} <input type="checkbox" name="pBtn" value="${nowLevel}-${j + 1}"></span>`
+                }
+                addHtml += '</div></div><div class="d-flex ms-4 me-4"><div class="vr"></div></div>'
+                // pMain이라는 id를 가지고 있는 div 안에 html 추가
+                document.getElementById('pMain').innerHTML += addHtml
+            }
+        });
+
+        // 선택한 버튼 리스트 가져오기
+        async function getSelectedValues() {
+            const selectedCheckboxes = document.querySelectorAll('input[type="checkbox"][name="pBtn"]:checked');
+            const selectedValues = Array.from(selectedCheckboxes).map(checkbox => checkbox.value);
+            return selectedValues;
+        }
+
+        async function download(type) {
+            // window.open('링크 주소')
+            var selectedValues = await getSelectedValues()
+            if (await selectedValues.length != 0) {
+                // 선택됨
+                var nowFolder = document.getElementById('pFolder').value;
+                var nowLink = `${window.location.href}api/makeFile?fileList=${JSON.stringify(selectedValues)}&type=${type}&folder=${nowFolder}`
+                window.open(nowLink)
+
+            } else {
+                // 아무것도 선택하지 않음
+                console.log("선택안함")
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'bottom-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'error',
+                    title: "문제를 1개 이상 선택해주세요."
+                })
+
+            }
+
+        }
+
     </script>
 </body>
 
